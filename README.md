@@ -20,7 +20,7 @@ The core parts of the Scrollama code base are being refactored for 3.0 to simplf
 
 [Jump to examples.](https://github.com/russellsamora/scrollama#examples)
 
-## Wなぜ?
+## なぜ?
 
 スクロールテリングは実装が複雑で、パフォーマンスを上げるのが難しい場合があります。
 このライブラリの目標は、スクロール駆動型のインタラクティブを作成するためのシンプルなインターフェースを提供することです。Scrollama は、要素の位置検出を処理するために [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
@@ -62,7 +62,7 @@ _注: これらの例のほとんどは、コードを簡潔にするために D
 npm install scrollama intersection-observer --save
 ```
 
-そしてそれを import/require します:
+そして import/require します:
 
 ```js
 import scrollama from "scrollama"; // or...
@@ -107,17 +107,17 @@ scroller
 
 _options:_
 
-| Option  | Type | Description | Default |
+| オプション | タイプ | 説明 | デフォルト値 |
 | --- | --- | --- | --- |
-| step | string or HTMLElement[] | **required**  Selector (or array of elements) for the step elements that will trigger changes. |
-| offset | number (0 - 1, or string with "px") | How far from the top of the viewport to trigger a step. | 0.5 |
-| progress | boolean | Whether to fire incremental step progress updates or not. | false |
-| threshold | number (1 or higher) | The granularity of the progress interval in pixels (smaller = more granular). | 4 |
-| once | boolean | Only trigger the step to enter once then remove listener. | false || 
-| debug | boolean | Whether to show visual debugging tools or not. | false |
-| parent | HTMLElement[] | Parent element for step selector (use if you steps are in shadow DOM). | undefined |
-| container | HTMLElement | Parent element for the scroll story (use if scrollama is nested in a HTML element with overflow set to `scroll` or `auto`) | undefined |
-| root | HTMLElement | The element that is used as the viewport for checking visibility of the target. Must be the ancestor of the target. Defaults to the browser viewport if not specified or if null. See more details about usage of root on [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#intersection_observer_concepts_and_usage). | undefined |
+| step | string or HTMLElement[] | **required**  変更をトリガーするステップ要素のセレクター (または要素の配列) |
+| offset | number (0 - 1, or string with "px") | ビューポートの上部からステップをトリガーする距離。 | 0.5 |
+| progress | boolean | 増分ステップの進行状況更新を実行するかどうか。 | false |
+| threshold | number (1 or higher) | ピクセル単位の進行間隔の粒度 (小さいほど粒度が細かくなります)。 | 4 |
+| once | boolean | ステップを 1 回だけトリガーして、その後リスナーを削除します。 | false || 
+| debug | boolean | ビジュアル デバッグ ツールを表示するかどうか。 | false |
+| parent | HTMLElement[] | ステップセレクターの親要素（ステップが Shadow DOM 内にある場合に使用）。 | undefined |
+| container | HTMLElement | スクロール ストーリーの親要素 (scrollama が、overflow が `scroll` または `auto` に設定された HTML 要素にネストされている場合に使用します) | undefined |
+| root | HTMLElement | ターゲットの可視性をチェックするためのビューポートとして使用される要素。ターゲットの祖先である必要があります。指定されていない場合、または null の場合は、デフォルトでブラウザーのビューポートになります。ルートの使用法の詳細については、[MDN](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API#intersection_observer_concepts_and_usage) を参照してください。 | undefined |
 
 #### scrollama.onStepEnter(callback)
 
@@ -125,11 +125,11 @@ _options:_
 
 コールバックの引数はオブジェクトです: `{ element: DOMElement, index: number, direction: string }`
 
-`element`: The step element that triggered
+`element`: トリガーされたステップ要素
 
-`index`: The index of the step of all steps
+`index`: そのステップのインデックス
 
-`direction`: 'up' or 'down'
+`direction`: 'up' か 'down'
 
 #### scrollama.onStepExit(callback)
 
@@ -137,11 +137,11 @@ _options:_
 
 コールバックの引数はオブジェクトです: `{ element: DOMElement, index: number, direction: string }`
 
-`element`: The step element that triggered
+`element`: トリガーされたステップ要素
 
-`index`: The index of the step of all steps
+`index`: そのステップのインデックス
 
-`direction`: 'up' or 'down'
+`direction`: 'up' か 'down'
 
 #### scrollama.onStepProgress(callback)
 
@@ -149,13 +149,13 @@ _options:_
 
 コールバックの引数はオブジェクトです: `{ element: DOMElement, index: number, progress: number }`
 
-`element`: The step element that triggered
+`element`: トリガーされたステップ要素
 
-`index`: The index of the step of all steps
+`index`: そのステップのインデックス
 
-`progress`: The percent of completion of the step (0 - 1)
+`progress`: ステップの完了率 (0 - 1)
 
-`direction`: 'up' or 'down'
+`direction`: 'up' か 'down'
 
 #### scrollama.offsetTrigger([number or string])
 
@@ -181,7 +181,7 @@ scrollama にトリガーの変更の監視を停止するように指示しま�
 
 オプションで渡されたオフセットをオーバーライドするには、データ属性を使用して個々の要素にカスタム オフセットを設定します。例: `<div class="step" data-offset="0.25">` または `data-offset="100px"`。
 
-## Scrollama In The Wild
+## スクローラマの非公式利用例
 * [The Billionaire Playbook - ProPublica](https://www.propublica.org/article/the-billionaire-playbook-how-sports-owners-use-their-teams-to-avoid-millions-in-taxes)
 * [Women's Pockets are Inferior - The Pudding](https://pudding.cool/2018/08/pockets/)
 * [Trump approval rating - Politico](https://www.politico.com/interactives/2019/trump-approval-rating-polls/)
