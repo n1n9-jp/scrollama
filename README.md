@@ -1,9 +1,6 @@
 <img src="https://russellsamora.github.io/scrollama/logo.png" width="160" alt="scrollama.js"/>
 
-**Scrollama** is a modern & lightweight JavaScript library for scrollytelling
-using
-[IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
-in favor of scroll events. *Current version: 3.2.0*
+**Scrollama** は、スクロール・イベントに優先して [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) を使用する、スクローリーテリング用の最新の軽量 JavaScript ライブラリです。 *現在のバージョン: 3.2.0*
 
 ## 3.0
 #### Why 3.0?
@@ -23,20 +20,17 @@ The core parts of the Scrollama code base are being refactored for 3.0 to simplf
 
 [Jump to examples.](https://github.com/russellsamora/scrollama#examples)
 
-## Why?
+## Wなぜ?
 
-Scrollytelling can be complicated to implement and difficult to make performant.
-The goal of this library is to provide a simple interface for creating
-scroll-driven interactives. Scrollama is focused on performance by using
-[IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
-to handle element position detection.
+スクロールテリングは実装が複雑で、パフォーマンスを上げるのが難しい場合があります。
+このライブラリの目標は、スクロール駆動型のインタラクティブを作成するためのシンプルなインターフェースを提供することです。Scrollama は、要素の位置検出を処理するために [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API)
+を使用することで、パフォーマンスに重点を置いています。
 
 [![scrollytelling pattern](https://thumbs.gfycat.com/FearfulHotArabianoryx-size_restricted.gif)](https://pudding.cool/process/how-to-implement-scrollytelling)
 
-## Examples
+## 事例
 
-_Note: most of these examples use D3 to keep the code concise, but this can be used
-with any library, or with no library at all._
+_注: これらの例のほとんどは、コードを簡潔にするために D3 を使用していますが、任意のライブラリ、またはライブラリなしでも使用できます。_
 
 - [Basic](https://russellsamora.github.io/scrollama/basic) - just step
   triggers
@@ -53,39 +47,35 @@ with any library, or with no library at all._
 - [iframe Embed](https://russellsamora.github.io/scrollama/iframe) -
   Embedding a Scrollama instance inside an iframe using `root` option
 
-## Installation
-**Note: As of version 1.4.0, the IntersectionObserver polyfill has been removed from the build. You must include it yourself for cross-browser support.** Check [here](https://caniuse.com/#feat=intersectionobserver) to see if you need to include the polyfill.
+## インストール
+**注: バージョン 1.4.0 以降、IntersectionObserver ポリフィルはビルドから削除されました。クロスブラウザ サポートのためには、自分でポリフィルを含める必要があります。** [こちら](https://caniuse.com/#feat=intersectionobserver) をチェックして、ポリフィルを含める必要があるかどうかを確認してください。
 
-Old school (exposes the `scrollama` global):
+旧式 (`scrollama` グローバルを公開):
 
 ```html
 <script src="https://unpkg.com/scrollama"></script>
 ```
 
-New school:
+新式:
 
 ```sh
 npm install scrollama intersection-observer --save
 ```
 
-And then import/require it:
+そしてそれを import/require します:
 
 ```js
 import scrollama from "scrollama"; // or...
 const scrollama = require("scrollama");
 ```
 
-## How to use
+## 使い方
 
-#### Basic
+#### 基本
 
-You can use this library to simply trigger steps, similar to something like
-[Waypoints](http://imakewebthings.com/waypoints/). This is useful if you need
-more control over your interactive, or you don't want to follow the sticky
-scrollytelling pattern.
+このライブラリを使用すると、単にステップをトリガーできます。[Waypoints](http://imakewebthings.com/waypoints/) のようなものに似ています。これは、インタラクティブをさらに制御する必要がある場合、または固定スクロール テリング パターンに従いたくない場合に便利です。
 
-You can use any id/class naming conventions you want. The HTML structure should
-look like:
+任意の ID/クラス命名規則を使用できます。HTML 構造は次のようになります:
 
 ```html
 <!--you don't need the "data-step" attr, but can be useful for storing instructions for JS -->
@@ -131,10 +121,9 @@ _options:_
 
 #### scrollama.onStepEnter(callback)
 
-Callback that fires when the top or bottom edge of a step element enters the
-offset threshold.
+ステップ要素の上端または下端がオフセットしきい値に入ったときに発生するコールバック。
 
-The argument of the callback is an object: `{ element: DOMElement, index: number, direction: string }`
+コールバックの引数はオブジェクトです: `{ element: DOMElement, index: number, direction: string }`
 
 `element`: The step element that triggered
 
@@ -144,10 +133,9 @@ The argument of the callback is an object: `{ element: DOMElement, index: number
 
 #### scrollama.onStepExit(callback)
 
-Callback that fires when the top or bottom edge of a step element exits the
-offset threshold.
+ステップ要素の上端または下端がオフセットしきい値を出たときに発生するコールバック。
 
-The argument of the callback is an object: `{ element: DOMElement, index: number, direction: string }`
+コールバックの引数はオブジェクトです: `{ element: DOMElement, index: number, direction: string }`
 
 `element`: The step element that triggered
 
@@ -157,9 +145,9 @@ The argument of the callback is an object: `{ element: DOMElement, index: number
 
 #### scrollama.onStepProgress(callback)
 
-Callback that fires the progress (0 - 1) a step has made through the threshold.
+しきい値を超えたステップの進行状況 (0 - 1) を起動するコールバック。
 
-The argument of the callback is an object: `{ element: DOMElement, index: number, progress: number }`
+コールバックの引数はオブジェクトです: `{ element: DOMElement, index: number, progress: number }`
 
 `element`: The step element that triggered
 
@@ -171,30 +159,27 @@ The argument of the callback is an object: `{ element: DOMElement, index: number
 
 #### scrollama.offsetTrigger([number or string])
 
-Get or set the offset percentage. Value must be between 0-1 (where 0 = top of viewport, 1 = bottom), or a string that includes "px" (e.g., "200px"). If set, returns the scrollama instance.
+オフセットのパーセンテージを取得または設定します。値は 0 ～ 1 (0 = ビューポートの上部、1 = 下部) または「px」を含む文字列 (例:「200px」) である必要があります。設定されている場合、scrollama インスタンスを返します。
 
 #### scrollama.resize()
 
-**This is no longer necessary with the addition of a built-in resize observer**. Tell scrollama to get latest dimensions the browser/DOM. It is best practice to
-throttle resize in your code, update the DOM elements, then call this function
-at the end.
+**組み込みのサイズ変更オブザーバーが追加されたため、これは不要になりました**。ブラウザ/DOM の最新の寸法を取得するように scrollama に指示します。コード内でサイズ変更を抑制し、DOM 要素を更新してから、最後にこの関数を呼び出すのがベスト プラクティスです。
 
 #### scrollama.enable()
 
-Tell scrollama to resume observing for trigger changes. Only necessary to call
-if you have previously disabled.
+scrollama にトリガーの変更の監視を再開するように指示します。以前に無効にしていた場合にのみ呼び出す必要があります。
 
 #### scrollama.disable()
 
-Tell scrollama to stop observing for trigger changes.
+scrollama にトリガーの変更の監視を停止するように指示します。
 
 #### scrollama.destroy()
 
-Removes all observers and callback functions.
+すべてのオブザーバーとコールバック関数を削除します。
 
 #### custom offset
 
-To override the offset passed in the options, set a custom offset for an individual element using data attributes. For example: `<div class="step" data-offset="0.25">` or `data-offset="100px"`.
+オプションで渡されたオフセットをオーバーライドするには、データ属性を使用して個々の要素にカスタム オフセットを設定します。例: `<div class="step" data-offset="0.25">` または `data-offset="100px"`。
 
 ## Scrollama In The Wild
 * [The Billionaire Playbook - ProPublica](https://www.propublica.org/article/the-billionaire-playbook-how-sports-owners-use-their-teams-to-avoid-millions-in-taxes)
@@ -215,8 +200,8 @@ To override the offset passed in the options, set a custom offset for an individ
 * [Remote Triggering of Earthquakes - Will Chase](https://www.williamrchase.com/vizrisk/vizrisk_main/)
 * [Scrollytelling - Mapbox](https://demos.mapbox.com/scrollytelling/)
 
-## Tips
-- Avoid using `viewport height` (vh) in your CSS because scrolling up and down constantly triggers vh to change, which will also trigger a window resize.
+## ティップス
+- CSS で `viewport height` (vh) を使用しないでください。上下にスクロールすると vh が頻繁に変更され、ウィンドウのサイズ変更もトリガーされます。
 
 ## Alternatives
 - [Scroll Trigger](https://greensock.com/scrolltrigger/)
