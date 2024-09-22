@@ -32,20 +32,13 @@ The core parts of the Scrollama code base are being refactored for 3.0 to simplf
 
 _注: これらの例のほとんどは、コードを簡潔にするために D3 を使用していますが、任意のライブラリ、またはライブラリなしでも使用できます。_
 
-- [Basic](https://russellsamora.github.io/scrollama/basic) - just step
-  triggers
-- [Progress](https://russellsamora.github.io/scrollama/progress) -
-  incremental step progress callback
-- [Sticky Graphic (Side by Side)](https://russellsamora.github.io/scrollama/sticky-side) -
-  using CSS `position: sticky;` to create a fixed graphic to the side of the text.
-- [Sticky Graphic (Overlay)](https://russellsamora.github.io/scrollama/sticky-overlay) -
-  using CSS `position: sticky;` to create a fixed graphic with fullscreen graphic with text overlayed.
-- [Custom Offset](https://russellsamora.github.io/scrollama/custom-offset) -
-  Adding a data attribute to an element to provide a unique offset for a step.
-- [Mobile Pattern](https://russellsamora.github.io/scrollama/mobile-pattern) -
-  using pixels instead of percent for offset value so it doesn't jump around on scroll direction change
-- [iframe Embed](https://russellsamora.github.io/scrollama/iframe) -
-  Embedding a Scrollama instance inside an iframe using `root` option
+- [Basic](https://russellsamora.github.io/scrollama/basic) - ステップ トリガーのみ
+- [Progress](https://russellsamora.github.io/scrollama/progress) - 増分ステップ進行状況コールバック
+- [Sticky Graphic (Side by Side)](https://russellsamora.github.io/scrollama/sticky-side) - CSS `position: stick;` を使用して、テキストの横に固定グラフィックを作成します。
+- [Sticky Graphic (Overlay)](https://russellsamora.github.io/scrollama/sticky-overlay) - CSS `position: stick;` を使用して、テキストがオーバーレイされたフルスクリーン グラフィックを含む固定グラフィックを作成します。
+- [Custom Offset](https://russellsamora.github.io/scrollama/custom-offset) - 要素にデータ属性を追加して、ステップに固有のオフセットを提供します。
+- [Mobile Pattern](https://russellsamora.github.io/scrollama/mobile-pattern) - オフセット値にパーセントではなくピクセルを使用して、スクロール方向の変更時にジャンプしないようにします。
+- [iframe Embed](https://russellsamora.github.io/scrollama/iframe) - `root` オプションを使用して iframe 内に Scrollama インスタンスを埋め込みます
 
 ## インストール
 **注: バージョン 1.4.0 以降、IntersectionObserver ポリフィルはビルドから削除されました。クロスブラウザ サポートのためには、自分でポリフィルを含める必要があります。** [こちら](https://caniuse.com/#feat=intersectionobserver) をチェックして、ポリフィルを含める必要があるかどうかを確認してください。
