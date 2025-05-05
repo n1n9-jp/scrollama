@@ -3,15 +3,15 @@
 **Scrollama** は、スクロール・イベントに優先して [IntersectionObserver](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API) を使用する、スクローリーテリング用の最新の軽量 JavaScript ライブラリです。 *現在のバージョン: 3.2.0*
 
 ## 3.0
-#### Why 3.0?
-The core parts of the Scrollama code base are being refactored for 3.0 to simplfy and clarify the logic. The goal behind this to ease make future maintainance, bug fixing, and feature additions easier moving forward.
+#### なぜ 3.0 なのか？
+Scrollama のコードベースのコア部分は、3.0 に向けてリファクタリングされ、ロジックが簡素化・明確化されています。これは、将来のメンテナンス、バグ修正、機能追加を容易にすることを目的としています。
 
-#### New Fetaures
-* Built-in resize using resize observers.
-* Custom offsets on steps with data attributes
+#### 新機能
+* リサイズオブザーバーを使用した組み込みのサイズ変更機能。
+* データ属性を持つステップのカスタムオフセット
 
-#### Deprecated Features
-* the `order` option
+#### 非推奨の機能
+* `order` オプション
 
 ## Important Changes
 - **Version 3.0.0+**: `order` has been deprecated.
